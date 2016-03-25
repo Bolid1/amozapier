@@ -155,7 +155,23 @@
     "custom_fields_url": "https://{{account}}.amocrm.com/private/api/v2/json/accounts/current/",
     "hook_event": "delete_lead",
     "hook_static_directions": "Log into your service and paste the below URL into the webhook setup field.",
-    "sample_result_fields": [],
+    "sample_result_fields": [
+      {
+        "type": "unicode",
+        "key": "id",
+        "label": "Lead ID"
+      },
+      {
+        "type": "unicode",
+        "key": "subdomain",
+        "label": "Account subdomain"
+      },
+      {
+        "type": "unicode",
+        "key": "url",
+        "label": "URL for see lead"
+      }
+    ],
     "fields": {}
   },
   "delete_contact": {
@@ -170,7 +186,23 @@
     "custom_fields_url": "https://{{account}}.amocrm.com/private/api/v2/json/accounts/current/",
     "hook_event": "delete_contact",
     "hook_static_directions": "Log into your service and paste the below URL into the webhook setup field.",
-    "sample_result_fields": [],
+    "sample_result_fields": [
+      {
+        "type": "unicode",
+        "key": "id",
+        "label": "Contact ID"
+      },
+      {
+        "type": "unicode",
+        "key": "subdomain",
+        "label": "Account subdomain"
+      },
+      {
+        "type": "unicode",
+        "key": "url",
+        "label": "URL for see contact"
+      }
+    ],
     "fields": {}
   },
   "delete_company": {
@@ -185,7 +217,23 @@
     "custom_fields_url": "https://{{account}}.amocrm.com/private/api/v2/json/accounts/current/",
     "hook_event": "delete_company",
     "hook_static_directions": "Log into your service and paste the below URL into the webhook setup field.",
-    "sample_result_fields": [],
+    "sample_result_fields": [
+      {
+        "type": "unicode",
+        "key": "id",
+        "label": "Company ID"
+      },
+      {
+        "type": "unicode",
+        "key": "subdomain",
+        "label": "Account subdomain"
+      },
+      {
+        "type": "unicode",
+        "key": "url",
+        "label": "URL for see company"
+      }
+    ],
     "fields": {}
   },
   "restore_lead": {
