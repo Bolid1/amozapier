@@ -65,36 +65,7 @@
     "custom_fields_url": "https://{{account}}.amocrm.com/private/api/v2/json/accounts/current/", 
     "hook_event": "add_contact", 
     "hook_static_directions": "Log into your service and paste the below URL into the webhook setup field.", 
-    "sample_result_fields": [
-      {
-        "type": "unicode", 
-        "key": "created_user_id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "date_create"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "last_modified"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "modified_user_id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "name"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "responsible_user_id"
-      }
-    ], 
+    "sample_result_fields": [], 
     "fields": {}
   }, 
   "add_company": {
@@ -109,40 +80,7 @@
     "custom_fields_url": "https://{{account}}.amocrm.com/private/api/v2/json/accounts/current/", 
     "hook_event": "add_company", 
     "hook_static_directions": "Log into your service and paste the below URL into the webhook setup field.", 
-    "sample_result_fields": [
-      {
-        "type": "unicode", 
-        "key": "created_user_id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "date_create"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "group_id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "last_modified"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "modified_user_id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "name"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "responsible_user_id"
-      }
-    ], 
+    "sample_result_fields": [], 
     "fields": {}
   }, 
   "add_lead": {
@@ -157,48 +95,7 @@
     "custom_fields_url": "https://{{account}}.amocrm.com/private/api/v2/json/accounts/current/", 
     "hook_event": "add_lead", 
     "hook_static_directions": "Log into your service and paste the below URL into the webhook setup field.", 
-    "sample_result_fields": [
-      {
-        "type": "unicode", 
-        "key": "created_user_id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "date_create"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "last_modified"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "modified_user_id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "name"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "pipeline_id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "price"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "responsible_user_id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "status_id"
-      }
-    ], 
+    "sample_result_fields": [], 
     "fields": {}
   }, 
   "delete_lead": {
@@ -213,23 +110,7 @@
     "custom_fields_url": "https://{{account}}.amocrm.com/private/api/v2/json/accounts/current/", 
     "hook_event": "delete_lead", 
     "hook_static_directions": "Log into your service and paste the below URL into the webhook setup field.", 
-    "sample_result_fields": [
-      {
-        "type": "unicode", 
-        "key": "id", 
-        "label": "Lead id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "subdomain", 
-        "label": "Account subdomain"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "url", 
-        "label": "URL for see lead"
-      }
-    ], 
+    "sample_result_fields": [], 
     "fields": {}
   }, 
   "delete_contact": {
@@ -244,23 +125,7 @@
     "custom_fields_url": "https://{{account}}.amocrm.com/private/api/v2/json/accounts/current/", 
     "hook_event": "delete_contact", 
     "hook_static_directions": "Log into your service and paste the below URL into the webhook setup field.", 
-    "sample_result_fields": [
-      {
-        "type": "unicode", 
-        "key": "id", 
-        "label": "Contact id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "subdomain", 
-        "label": "Account subdomain"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "url", 
-        "label": "URL for see contact"
-      }
-    ], 
+    "sample_result_fields": [], 
     "fields": {}
   }, 
   "delete_company": {
@@ -275,23 +140,7 @@
     "custom_fields_url": "https://{{account}}.amocrm.com/private/api/v2/json/accounts/current/", 
     "hook_event": "delete_company", 
     "hook_static_directions": "Log into your service and paste the below URL into the webhook setup field.", 
-    "sample_result_fields": [
-      {
-        "type": "unicode", 
-        "key": "id", 
-        "label": "Company id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "subdomain", 
-        "label": "Account subdomain"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "url", 
-        "label": "URL for see company"
-      }
-    ], 
+    "sample_result_fields": [], 
     "fields": {}
   }, 
   "update_lead": {
@@ -306,48 +155,7 @@
     "custom_fields_url": "https://{{account}}.amocrm.com/private/api/v2/json/accounts/current/", 
     "hook_event": "update_lead", 
     "hook_static_directions": "Log into your service and paste the below URL into the webhook setup field.", 
-    "sample_result_fields": [
-      {
-        "type": "unicode", 
-        "key": "created_user_id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "date_create"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "last_modified"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "modified_user_id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "name"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "pipeline_id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "price"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "responsible_user_id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "status_id"
-      }
-    ], 
+    "sample_result_fields": [], 
     "fields": {}
   }, 
   "update_contact": {
@@ -362,36 +170,7 @@
     "custom_fields_url": "https://{{account}}.amocrm.com/private/api/v2/json/accounts/current/", 
     "hook_event": "update_contact", 
     "hook_static_directions": "Log into your service and paste the below URL into the webhook setup field.", 
-    "sample_result_fields": [
-      {
-        "type": "unicode", 
-        "key": "created_user_id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "date_create"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "last_modified"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "modified_user_id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "name"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "responsible_user_id"
-      }
-    ], 
+    "sample_result_fields": [], 
     "fields": {}
   }, 
   "update_company": {
@@ -406,40 +185,7 @@
     "custom_fields_url": "https://{{account}}.amocrm.com/private/api/v2/json/accounts/current/", 
     "hook_event": "update_company", 
     "hook_static_directions": "Log into your service and paste the below URL into the webhook setup field.", 
-    "sample_result_fields": [
-      {
-        "type": "unicode", 
-        "key": "created_user_id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "date_create"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "group_id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "last_modified"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "modified_user_id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "name"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "responsible_user_id"
-      }
-    ], 
+    "sample_result_fields": [], 
     "fields": {}
   }, 
   "restore_company": {
@@ -454,40 +200,7 @@
     "custom_fields_url": "https://{{account}}.amocrm.com/private/api/v2/json/accounts/current/", 
     "hook_event": "restore_company", 
     "hook_static_directions": "Log into your service and paste the below URL into the webhook setup field.", 
-    "sample_result_fields": [
-      {
-        "type": "unicode", 
-        "key": "created_user_id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "date_create"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "group_id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "last_modified"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "modified_user_id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "name"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "responsible_user_id"
-      }
-    ], 
+    "sample_result_fields": [], 
     "fields": {}
   }, 
   "restore_contact": {
@@ -502,36 +215,7 @@
     "custom_fields_url": "https://{{account}}.amocrm.com/private/api/v2/json/accounts/current/", 
     "hook_event": "restore_contact", 
     "hook_static_directions": "Log into your service and paste the below URL into the webhook setup field.", 
-    "sample_result_fields": [
-      {
-        "type": "unicode", 
-        "key": "created_user_id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "date_create"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "last_modified"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "modified_user_id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "name"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "responsible_user_id"
-      }
-    ], 
+    "sample_result_fields": [], 
     "fields": {}
   }, 
   "restore_lead": {
@@ -546,48 +230,7 @@
     "custom_fields_url": "https://{{account}}.amocrm.com/private/api/v2/json/accounts/current/", 
     "hook_event": "restore_lead", 
     "hook_static_directions": "Log into your service and paste the below URL into the webhook setup field.", 
-    "sample_result_fields": [
-      {
-        "type": "unicode", 
-        "key": "created_user_id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "date_create"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "last_modified"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "modified_user_id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "name"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "pipeline_id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "price"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "responsible_user_id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "status_id"
-      }
-    ], 
+    "sample_result_fields": [], 
     "fields": {}
   }, 
   "status_lead": {
@@ -602,52 +245,7 @@
     "custom_fields_url": "https://{{account}}.amocrm.com/private/api/v2/json/accounts/current/", 
     "hook_event": "status_lead", 
     "hook_static_directions": "Log into your service and paste the below URL into the webhook setup field.", 
-    "sample_result_fields": [
-      {
-        "type": "unicode", 
-        "key": "created_user_id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "date_create"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "last_modified"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "modified_user_id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "name"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "old_status_id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "pipeline_id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "price"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "responsible_user_id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "status_id"
-      }
-    ], 
+    "sample_result_fields": [], 
     "fields": {}
   }, 
   "responsible_lead": {
@@ -662,52 +260,7 @@
     "custom_fields_url": "https://{{account}}.amocrm.com/private/api/v2/json/accounts/current/", 
     "hook_event": "responsible_lead", 
     "hook_static_directions": "Log into your service and paste the below URL into the webhook setup field.", 
-    "sample_result_fields": [
-      {
-        "type": "unicode", 
-        "key": "created_user_id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "date_create"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "last_modified"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "modified_user_id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "name"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "old_responsible_user_id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "pipeline_id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "price"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "responsible_user_id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "status_id"
-      }
-    ], 
+    "sample_result_fields": [], 
     "fields": {}
   }
 }
