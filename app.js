@@ -32,7 +32,7 @@ _.extend(Application.prototype, {
   },
 
   pre_read_resource: function (type, bundle) {
-    bundle.request.params = _.extend(bundle.request.params, bundle.search_fields);
+    bundle.request.params = _.extend(bundle.request.params, bundle.read_context);
 
     return bundle.request;
   },
@@ -53,7 +53,7 @@ _.extend(Application.prototype, {
       /** @var {String} tmp */
       tmp = bundle.response.content;
       /** @var {Object} tmp */
-      tmp = JSON.parse(tmp);
+      tmp = _.isString(tmp) ? JSON.parse(tmp) : tmp;
       if (tmp && tmp.response && tmp.response[api_name]) {
         entities = tmp.response[api_name];
       }
@@ -243,6 +243,10 @@ _.extend(Application.prototype, {
   },
 
   prepareFieldsFromAccount: function (action, entity, content) {
+    if (entity === 'task' || entity === 'note') {
+      return this.prepareFieldsFromAccountForAdditions(action, entity, content);
+    }
+
     var account, tmp, users, statuses, pipelines,
       custom_fields;
 
@@ -333,7 +337,12 @@ _.extend(Application.prototype, {
         'price',
         'status_id',
         'company_name',
-        'old_status_id'
+        'old_status_id',
+        'element_id',
+        'element_type',
+        'note_type',
+        'text',
+        'editable'
       ];
 
     if (!content) {
@@ -387,8 +396,16 @@ _.extend(Application.prototype, {
   },
 
   convertForRead: function (type, entity) {
-    var
-      base_fields = CustomFields.getBaseFields('all', type);
+    var base_fields;
+    switch (type) {
+      case 'tasks':
+      case 'notes':
+        base_fields = CustomFields.getAdditionsFields('all', type);
+        break;
+      default:
+        base_fields = CustomFields.getBaseFields('all', type);
+        break;
+    }
 
     _.each(base_fields, function (field) {
       if (typeof entity[field.key] === 'undefined') {
@@ -778,26 +795,36 @@ _.extend(CustomFields.prototype, {
       entity_name_lowercase = Application.convertEntityName(entity, 'single', false),
       zap_action,
       result,
-      is_action_add;
+      is_action_add,
+      is_all = action === 'all';
 
-    action = action.split('_');
-    zap_action = action[0];
-    action = action[1];
-
-    // Set base fields for all
-    is_action_add = zap_action === 'action' && action === 'add';
+    if (!is_all) {
+      action = action.split('_');
+      zap_action = action[0];
+      action = action[1];
+    }
 
     result = [
-      {
-        type: 'datetime',
-        key: 'date_create',
-        label: 'Date of creation of this ' + entity_name_lowercase
-      },
       {
         type: 'int',
         key: 'responsible_user_id',
         label: 'Unique identified of a responsible user',
         choices: users ? users : undefined
+      }
+    ];
+
+    if (zap_action === 'action' && action === 'search') {
+      return result;
+    }
+
+    // Set base fields for all
+    is_action_add = zap_action === 'action' && action === 'add';
+
+    result = result.concat([
+      {
+        type: 'datetime',
+        key: 'date_create',
+        label: 'Date of creation of this ' + entity_name_lowercase
       },
       {
         type: 'int',
@@ -816,9 +843,35 @@ _.extend(CustomFields.prototype, {
         },
         required: true
       }
-    ];
+    ]);
 
-    if (!is_action_add) {
+    if (is_all) {
+      result = result.concat([
+        {
+          type: 'int',
+          key: 'created_user_id',
+          label: 'Unique identified of a user which has created this ' + entity_name_lowercase,
+          choices: users ? users : undefined
+        },
+        {
+          type: 'datetime',
+          key: 'last_modified',
+          label: 'Date when ' + entity_name_lowercase + ' was modified'
+        },
+        {
+          type: 'unicode',
+          key: 'editable',
+          label: 'Indicates possibility of editing this ' + entity_name_lowercase + ': "Y" or "N"'
+        },
+        {
+          type: 'int',
+          key: 'group_id',
+          label: 'Unique identified of a group'
+        }
+      ]);
+    }
+
+    if (!is_action_add || is_all) {
       result.push({
         type: 'int',
         key: 'id',
@@ -850,6 +903,15 @@ _.extend(CustomFields.prototype, {
           required: is_action_add
         }
       ]);
+    }
+
+    if (entity_name_lowercase === 'note') {
+      result.push({
+        type: 'int',
+        key: 'note_type',
+        label: 'Note type',
+        choices: users ? users : undefined
+      });
     }
 
     return result;
@@ -1209,9 +1271,6 @@ Zap = {
   contact_search_post_search: function (bundle) {
     return Application.post_search('contact', bundle);
   },
-  contact_search_pre_read_resource: function (bundle) {
-    return Application.pre_read_resource('contact', bundle);
-  },
   contact_search_post_read_resource: function (bundle) {
     return Application.post_read_resource('contact', bundle);
   },
@@ -1311,9 +1370,6 @@ Zap = {
   lead_search_post_search: function (bundle) {
     return Application.post_search('lead', bundle);
   },
-  lead_search_pre_read_resource: function (bundle) {
-    return Application.pre_read_resource('lead', bundle);
-  },
   lead_search_post_read_resource: function (bundle) {
     return Application.post_read_resource('lead', bundle);
   },
@@ -1389,14 +1445,11 @@ Zap = {
   company_search_post_search: function (bundle) {
     return Application.post_search('company', bundle);
   },
-  company_search_pre_read_resource: function (bundle) {
-    return Application.pre_read_resource('company', bundle);
-  },
   company_search_post_read_resource: function (bundle) {
     return Application.post_read_resource('company', bundle);
   },
   task_add_post_custom_action_fields: function (bundle) {
-    return Application.prepareFieldsFromAccountForAdditions('action_add', 'task', bundle.response.content);
+    return Application.prepareFieldsFromAccount('action_add', 'task', bundle.response.content);
   },
   task_add_pre_write: function (bundle) {
     return Application.pre_write('add', 'task', bundle);
@@ -1405,7 +1458,7 @@ Zap = {
     return Application.post_write('add', 'task', bundle);
   },
   task_update_post_custom_action_fields: function (bundle) {
-    return Application.prepareFieldsFromAccountForAdditions('action_update', 'task', bundle.response.content);
+    return Application.prepareFieldsFromAccount('action_update', 'task', bundle.response.content);
   },
   task_update_pre_write: function (bundle) {
     return Application.pre_write('update', 'task', bundle);
@@ -1422,11 +1475,14 @@ Zap = {
   task_search_post_search: function (bundle) {
     return Application.post_search('task', bundle);
   },
+  task_search_pre_read_resource: function (bundle) {
+    return Application.pre_read_resource('task', bundle);
+  },
   task_search_post_read_resource: function (bundle) {
     return Application.post_read_resource('task', bundle);
   },
   note_add_post_custom_action_fields: function (bundle) {
-    return Application.prepareFieldsFromAccountForAdditions('action_add', 'note', bundle.response.content);
+    return Application.prepareFieldsFromAccount('action_add', 'note', bundle.response.content);
   },
   note_add_pre_write: function (bundle) {
     return Application.pre_write('add', 'note', bundle);
@@ -1435,7 +1491,7 @@ Zap = {
     return Application.post_write('add', 'note', bundle);
   },
   note_update_post_custom_action_fields: function (bundle) {
-    return Application.prepareFieldsFromAccountForAdditions('action_update', 'note', bundle.response.content);
+    return Application.prepareFieldsFromAccount('action_update', 'note', bundle.response.content);
   },
   note_update_pre_write: function (bundle) {
     return Application.pre_write('update', 'note', bundle);
@@ -1451,6 +1507,9 @@ Zap = {
   },
   note_search_post_search: function (bundle) {
     return Application.post_search('note', bundle);
+  },
+  note_search_pre_read_resource: function (bundle) {
+    return Application.pre_read_resource('note', bundle);
   },
   note_search_post_read_resource: function (bundle) {
     return Application.post_read_resource('note', bundle);
