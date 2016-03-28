@@ -166,7 +166,7 @@
         "choices": "contact|Contact,lead|Lead",
         "sort": null,
         "type_of": "Unicode",
-        "list": true,
+        "list": false,
         "prefill": null
       }
     }
@@ -218,7 +218,7 @@
         "choices": "contact|Contact,lead|Lead",
         "sort": null,
         "type_of": "Unicode",
-        "list": true,
+        "list": false,
         "prefill": null
       }
     }
