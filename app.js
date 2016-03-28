@@ -31,6 +31,12 @@ _.extend(Application.prototype, {
     return this.delete_catch_hook(type, bundle);
   },
 
+  pre_read_resource: function (type, bundle) {
+    bundle.request.params = _.extend(bundle.request.params, bundle.search_fields);
+
+    return bundle.request;
+  },
+
   post_read_resource: function (type, bundle) {
     type = this.convertEntityName(type, 'many');
     var
@@ -1203,6 +1209,9 @@ Zap = {
   contact_search_post_search: function (bundle) {
     return Application.post_search('contact', bundle);
   },
+  contact_search_pre_read_resource: function (bundle) {
+    return Application.pre_read_resource('contact', bundle);
+  },
   contact_search_post_read_resource: function (bundle) {
     return Application.post_read_resource('contact', bundle);
   },
@@ -1302,6 +1311,9 @@ Zap = {
   lead_search_post_search: function (bundle) {
     return Application.post_search('lead', bundle);
   },
+  lead_search_pre_read_resource: function (bundle) {
+    return Application.pre_read_resource('lead', bundle);
+  },
   lead_search_post_read_resource: function (bundle) {
     return Application.post_read_resource('lead', bundle);
   },
@@ -1376,6 +1388,9 @@ Zap = {
   },
   company_search_post_search: function (bundle) {
     return Application.post_search('company', bundle);
+  },
+  company_search_pre_read_resource: function (bundle) {
+    return Application.pre_read_resource('company', bundle);
   },
   company_search_post_read_resource: function (bundle) {
     return Application.post_read_resource('company', bundle);
