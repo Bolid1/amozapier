@@ -1,0 +1,17 @@
+{
+  "title": "amoCRM Cloned For Actions", 
+  "description": "amoCRM is a simple, easy-to-use Lead Management Software designed to save you time and money. It helps you manage leads and monitor your sales pipeline in only a few clicks.", 
+  "image_url": "https://zapier.cachefly.net/storage/developer/9689520b8decb6b6e96dd5f0ae7d3746.jpg", 
+  "test_trigger_key": "auth", 
+  "auth_type": "API Key (Query String)", 
+  "auth_mapping": {
+    "USER_LOGIN": "{{login}}", 
+    "USER_HASH": "{{api_key}}"
+  }, 
+  "subscribe_url": "https://{{account}}.amocrm.com/private/api/v2/json/webhooks/subscribe/", 
+  "unsubscribe_url": "https://{{account}}.amocrm.com/private/api/v2/json/webhooks/unsubscribe/", 
+  "their_user_count": 10000, 
+  "homepage_url": "http://www.amoCRM.com", 
+  "auth_urls": {}, 
+  "platform_version": "2015-07-31T00:00:00"
+}
