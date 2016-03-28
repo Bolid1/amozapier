@@ -1407,6 +1407,9 @@ Zap = {
   task_search_post_search: function (bundle) {
     return Application.post_search('task', bundle);
   },
+  task_search_post_read_resource: function (bundle) {
+    return Application.post_read_resource('task', bundle);
+  },
   note_add_post_custom_action_fields: function (bundle) {
     return Application.prepareFieldsFromAccountForAdditions('action_add', 'note', bundle.response.content);
   },
@@ -1433,5 +1436,8 @@ Zap = {
   },
   note_search_post_search: function (bundle) {
     return Application.post_search('note', bundle);
+  },
+  note_search_post_read_resource: function (bundle) {
+    return Application.post_read_resource('note', bundle);
   }
 };
