@@ -1,5 +1,232 @@
 "use strict";
 
+var confSearches = {
+  "lead_search": {
+    "_dump_version": 1,
+    "label": "Find Lead",
+    "help_text": "Finds an existing lead",
+    "noun": "Lead",
+    "important": true,
+    "hide": false,
+    "url": "https://{{account}}.amocrm.com/private/api/v2/json/leads/list/",
+    "custom_fields_url": "https://{{account}}.amocrm.com/private/api/v2/json/accounts/current/",
+    "resource_url": "https://{{account}}.amocrm.com/private/api/v2/json/leads/list/?id={{id}}",
+    "action_pair_label": "Find or Create Lead",
+    "action_pair_key": "lead_add",
+    "sample_result_fields": [],
+    "fields": {
+      "id": {
+        "label": "ID",
+        "required": false,
+        "help_text": "Select an element with the specified ID (if this parameter is indicated, all other parameters will be ignored)",
+        "placeholder": "123456",
+        "default": null,
+        "choices": null,
+        "sort": null,
+        "type_of": "Integer",
+        "list": true,
+        "prefill": null
+      },
+      "query": {
+        "label": "Query",
+        "required": false,
+        "help_text": "Searched element, by a text query (Performs search in such fields as e-mail, phone and others; does not perform search in notes and tasks)",
+        "placeholder": "Lead name",
+        "default": null,
+        "choices": null,
+        "sort": null,
+        "type_of": "Unicode",
+        "list": false,
+        "prefill": null
+      }
+    }
+  },
+  "contact_search": {
+    "_dump_version": 1,
+    "label": "Find Contact",
+    "help_text": "Finds an existing contact",
+    "noun": "Contact",
+    "important": true,
+    "hide": false,
+    "url": "https://{{account}}.amocrm.com/private/api/v2/json/contacts/list/",
+    "custom_fields_url": "https://{{account}}.amocrm.com/private/api/v2/json/accounts/current/",
+    "resource_url": "https://{{account}}.amocrm.com/private/api/v2/json/contacts/list/?id={{id}}",
+    "action_pair_label": "Find or Create Contact",
+    "action_pair_key": "contact_add",
+    "sample_result_fields": [],
+    "fields": {
+      "id": {
+        "label": "ID",
+        "required": false,
+        "help_text": "Select an element with the specified ID (if this parameter is indicated, all other parameters will be ignored)",
+        "placeholder": "123456",
+        "default": null,
+        "choices": null,
+        "sort": null,
+        "type_of": "Integer",
+        "list": true,
+        "prefill": null
+      },
+      "query": {
+        "label": "Query",
+        "required": false,
+        "help_text": "Searched element, by a text query (Performs search in such fields as e-mail, phone and others; does not perform search in notes and tasks)",
+        "placeholder": "Contact name",
+        "default": null,
+        "choices": null,
+        "sort": null,
+        "type_of": "Unicode",
+        "list": false,
+        "prefill": null
+      }
+    }
+  },
+  "company_search": {
+    "_dump_version": 1,
+    "label": "Find Company",
+    "help_text": "Finds an existing company",
+    "noun": "Company",
+    "important": true,
+    "hide": false,
+    "url": "https://{{account}}.amocrm.com/private/api/v2/json/company/list/",
+    "custom_fields_url": "https://{{account}}.amocrm.com/private/api/v2/json/accounts/current/",
+    "resource_url": "https://{{account}}.amocrm.com/private/api/v2/json/company/list/?id={{id}}",
+    "action_pair_label": "Find or Create Company",
+    "action_pair_key": "company_add",
+    "sample_result_fields": [],
+    "fields": {
+      "id": {
+        "label": "ID",
+        "required": false,
+        "help_text": "Select an element with the specified ID (if this parameter is indicated, all other parameters will be ignored)",
+        "placeholder": "123456",
+        "default": null,
+        "choices": null,
+        "sort": null,
+        "type_of": "Integer",
+        "list": true,
+        "prefill": null
+      },
+      "query": {
+        "label": "Query",
+        "required": false,
+        "help_text": "Searched element, by a text query (Performs search in such fields as e-mail, phone and others; does not perform search in notes and tasks)",
+        "placeholder": "Company name",
+        "default": null,
+        "choices": null,
+        "sort": null,
+        "type_of": "Unicode",
+        "list": false,
+        "prefill": null
+      }
+    }
+  },
+  "task_search": {
+    "_dump_version": 1,
+    "label": "Find Task",
+    "help_text": "Finds an existing task",
+    "noun": "Task",
+    "important": true,
+    "hide": false,
+    "url": "https://{{account}}.amocrm.com/private/api/v2/json/tasks/list/",
+    "custom_fields_url": "https://{{account}}.amocrm.com/private/api/v2/json/accounts/current/",
+    "resource_url": "https://{{account}}.amocrm.com/private/api/v2/json/tasks/list/?id={{id}}",
+    "action_pair_label": "Find or Create Task",
+    "action_pair_key": "task_add",
+    "sample_result_fields": [],
+    "fields": {
+      "id": {
+        "label": "ID",
+        "required": false,
+        "help_text": "Select an element with the specified ID (if this parameter is indicated, all other parameters will be ignored)",
+        "placeholder": "123456",
+        "default": null,
+        "choices": null,
+        "sort": null,
+        "type_of": "Integer",
+        "list": true,
+        "prefill": null
+      },
+      "element_id": {
+        "label": "Element ID",
+        "required": false,
+        "help_text": "Additional search filter option by lead/contact ID",
+        "placeholder": "123456",
+        "default": null,
+        "choices": null,
+        "sort": null,
+        "type_of": "Integer",
+        "list": false,
+        "prefill": null
+      },
+      "type": {
+        "label": "Element Type",
+        "required": false,
+        "help_text": "Obtaining data only for contact or lead",
+        "placeholder": "",
+        "default": null,
+        "choices": "contact|Contact,lead|Lead",
+        "sort": null,
+        "type_of": "Unicode",
+        "list": false,
+        "prefill": null
+      }
+    }
+  },
+  "note_search": {
+    "_dump_version": 1,
+    "label": "Find Note",
+    "help_text": "Finds an existing note",
+    "noun": "Note",
+    "important": true,
+    "hide": false,
+    "url": "https://{{account}}.amocrm.com/private/api/v2/json/notes/list/",
+    "custom_fields_url": "https://{{account}}.amocrm.com/private/api/v2/json/accounts/current/",
+    "resource_url": "https://{{account}}.amocrm.com/private/api/v2/json/notes/list/?id={{id}}",
+    "action_pair_label": "Find or Create Note",
+    "action_pair_key": "note_add",
+    "sample_result_fields": [],
+    "fields": {
+      "id": {
+        "label": "ID",
+        "required": false,
+        "help_text": "Select an element with the specified ID (if this parameter is indicated, all other parameters will be ignored)",
+        "placeholder": "123456",
+        "default": null,
+        "choices": null,
+        "sort": null,
+        "type_of": "Integer",
+        "list": true,
+        "prefill": null
+      },
+      "element_id": {
+        "label": "Element ID",
+        "required": false,
+        "help_text": "Additional search filter option by lead/contact ID",
+        "placeholder": "123456",
+        "default": null,
+        "choices": null,
+        "sort": null,
+        "type_of": "Integer",
+        "list": false,
+        "prefill": null
+      },
+      "type": {
+        "label": "Element Type",
+        "required": true,
+        "help_text": "Obtaining data only for contact or lead",
+        "placeholder": "",
+        "default": null,
+        "choices": "contact|Contact,lead|Lead",
+        "sort": null,
+        "type_of": "Unicode",
+        "list": false,
+        "prefill": null
+      }
+    }
+  }
+};
+
 var Application = function () {};
 
 _.extend(Application.prototype, {
@@ -32,9 +259,9 @@ _.extend(Application.prototype, {
   },
 
   pre_read_resource: function (type, bundle) {
-    bundle.request.params = _.extend(bundle.request.params, bundle.read_context);
+    bundle.search_fields = bundle.read_context;
 
-    return bundle.request;
+    return this.pre_search(type, bundle);
   },
 
   post_read_resource: function (type, bundle) {
@@ -71,7 +298,25 @@ _.extend(Application.prototype, {
   },
 
   pre_search: function (type, bundle) {
-    bundle.request.params = _.extend(bundle.request.params, bundle.search_fields);
+    var
+      search_fields = bundle.search_fields,
+      avail_search_fields = _.keys(confSearches[type + '_search'].fields);
+
+    _.each(this.getBaseFields(type), function (field) {
+      avail_search_fields.push(field.key);
+    });
+
+    if (search_fields.element_type) {
+      search_fields.type = this.convertEntityName(search_fields.element_type, 'single');
+
+      if (type === 'note' || type === 'task') {
+        search_fields.type = search_fields.type === 'lead' ? search_fields.type : 'contact';
+      }
+    }
+
+    search_fields = _.pick(search_fields, avail_search_fields);
+
+    bundle.request.params = _.extend(bundle.request.params, search_fields);
     return bundle.request;
   },
 
@@ -90,12 +335,13 @@ _.extend(Application.prototype, {
       /** @var {String} tmp */
       tmp = bundle.response.content;
       /** @var {Object} tmp */
-      tmp = JSON.parse(tmp);
+      tmp = _.isString(tmp) ? JSON.parse(tmp) : tmp;
       if (tmp && tmp.response && tmp.response[api_name]) {
         entities = tmp.response[api_name];
       }
     }
 
+    entities = _.sortBy(entities, 'last_modified').reverse();
     tmp = _.map(entities, function (entity) {
       var content = {};
       content[api_name] = {search: [entity]};
@@ -118,7 +364,7 @@ _.extend(Application.prototype, {
       /** @var {String} tmp */
       tmp = bundle.response.content;
       /** @var {Object} tmp */
-      tmp = JSON.parse(tmp);
+      tmp = _.isString(tmp) ? JSON.parse(tmp) : tmp;
       if (tmp && tmp.response && tmp.response[api_name]) {
         tmp = tmp.response[api_name];
         if (tmp[action] && tmp[action][0] && tmp[action][0].id) {
@@ -138,7 +384,8 @@ _.extend(Application.prototype, {
     var
       api_name = this.convertEntityName(type, 'api_name'),
       data = bundle.action_fields,
-      request_data = {};
+      request_data = {},
+      base_fields;
 
     if (!data) {
       return bundle.request;
@@ -157,8 +404,18 @@ _.extend(Application.prototype, {
     if (action !== 'add') {
       data.last_modified = moment().format('X');
     }
+
     if (data.custom_fields) {
       data.custom_fields = CustomFields.convertToApi(type, data.custom_fields);
+    }
+
+    if (type === 'task' || type === 'note') {
+      base_fields = CustomFields.getAdditionsFields('action_' + action, type);
+      base_fields = _.map(base_fields, function (field) {
+        return field.key;
+      });
+      base_fields.push('last_modified');
+      data = _.pick(data, base_fields);
     }
 
     request_data[api_name] = {};
@@ -192,30 +449,37 @@ _.extend(Application.prototype, {
         {
           many: 'contacts',
           single: 'contact',
-          api_name: 'contacts'
+          api_name: 'contacts',
+          id: 1
         },
         {
           many: 'companies',
           single: 'company',
-          api_name: 'contacts'
+          api_name: 'contacts',
+          id: 3
         },
         {
           many: 'leads',
           single: 'lead',
-          api_name: 'leads'
+          api_name: 'leads',
+          id: 2
         },
         {
           many: 'tasks',
           single: 'task',
-          api_name: 'tasks'
+          api_name: 'tasks',
+          id: 4
         },
         {
           many: 'notes',
           single: 'note',
-          api_name: 'notes'
+          api_name: 'notes',
+          id: 5
         }
       ],
       result = false;
+
+    entity = entity.toString();
 
     _.each(names, function (names_array) {
       if (result) {
@@ -224,7 +488,7 @@ _.extend(Application.prototype, {
 
       var found = false;
       _.each(names_array, function (name) {
-        if (name === entity) {
+        if (name.toString() === entity) {
           found = true;
         }
       });
@@ -395,7 +659,7 @@ _.extend(Application.prototype, {
     return result;
   },
 
-  convertForRead: function (type, entity) {
+  getBaseFields: function (type) {
     var base_fields;
     switch (type) {
       case 'tasks':
@@ -406,6 +670,11 @@ _.extend(Application.prototype, {
         base_fields = CustomFields.getBaseFields('all', type);
         break;
     }
+    return base_fields;
+  },
+
+  convertForRead: function (type, entity) {
+    var base_fields = this.getBaseFields(type);
 
     _.each(base_fields, function (field) {
       if (typeof entity[field.key] === 'undefined') {
