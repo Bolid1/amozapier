@@ -1,44 +1,4 @@
 {
-  "lead_search": {
-    "_dump_version": 1,
-    "label": "Find Lead",
-    "help_text": "Finds an existing lead",
-    "noun": "Lead",
-    "important": true,
-    "hide": false,
-    "url": "https://{{account}}.amocrm.com/private/api/v2/json/leads/list/",
-    "custom_fields_url": "https://{{account}}.amocrm.com/private/api/v2/json/accounts/current/",
-    "resource_url": "https://{{account}}.amocrm.com/private/api/v2/json/leads/list/?id={{id}}",
-    "action_pair_label": "Find or Create Lead",
-    "action_pair_key": "lead_add",
-    "sample_result_fields": [],
-    "fields": {
-      "id": {
-        "label": "ID",
-        "required": false,
-        "help_text": "Select an element with the specified ID (if this parameter is indicated, all other parameters will be ignored)",
-        "placeholder": "123456",
-        "default": null,
-        "choices": null,
-        "sort": null,
-        "type_of": "Integer",
-        "list": true,
-        "prefill": null
-      },
-      "query": {
-        "label": "Query",
-        "required": false,
-        "help_text": "Searched element, by a text query (Performs search in such fields as e-mail, phone and others; does not perform search in notes and tasks)",
-        "placeholder": "Lead name",
-        "default": null,
-        "choices": null,
-        "sort": null,
-        "type_of": "Unicode",
-        "list": false,
-        "prefill": null
-      }
-    }
-  },
   "contact_search": {
     "_dump_version": 1,
     "label": "Find Contact",
@@ -70,6 +30,46 @@
         "required": false,
         "help_text": "Searched element, by a text query (Performs search in such fields as e-mail, phone and others; does not perform search in notes and tasks)",
         "placeholder": "Contact name",
+        "default": null,
+        "choices": null,
+        "sort": null,
+        "type_of": "Unicode",
+        "list": false,
+        "prefill": null
+      }
+    }
+  },
+  "lead_search": {
+    "_dump_version": 1,
+    "label": "Find Lead",
+    "help_text": "Finds an existing lead",
+    "noun": "Lead",
+    "important": true,
+    "hide": false,
+    "url": "https://{{account}}.amocrm.com/private/api/v2/json/leads/list/",
+    "custom_fields_url": "https://{{account}}.amocrm.com/private/api/v2/json/accounts/current/",
+    "resource_url": "https://{{account}}.amocrm.com/private/api/v2/json/leads/list/?id={{id}}",
+    "action_pair_label": "Find or Create Lead",
+    "action_pair_key": "lead_add",
+    "sample_result_fields": [],
+    "fields": {
+      "id": {
+        "label": "ID",
+        "required": false,
+        "help_text": "Select an element with the specified ID (if this parameter is indicated, all other parameters will be ignored)",
+        "placeholder": "123456",
+        "default": null,
+        "choices": null,
+        "sort": null,
+        "type_of": "Integer",
+        "list": true,
+        "prefill": null
+      },
+      "query": {
+        "label": "Query",
+        "required": false,
+        "help_text": "Searched element, by a text query (Performs search in such fields as e-mail, phone and others; does not perform search in notes and tasks)",
+        "placeholder": "Lead name",
         "default": null,
         "choices": null,
         "sort": null,

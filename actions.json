@@ -1,60 +1,4 @@
 {
-  "lead_add": {
-    "_dump_version": 1,
-    "label": "Create Lead",
-    "help_text": "Creates a new lead",
-    "noun": "Lead",
-    "important": true,
-    "hide": false,
-    "url": "https://{{account}}.amocrm.com/private/api/v2/json/leads/set/",
-    "custom_fields_url": "https://{{account}}.amocrm.com/private/api/v2/json/accounts/current/",
-    "sample_result_fields": [
-      {
-        "type": "int",
-        "key": "id",
-        "label": "Unique lead identifier"
-      },
-      {
-        "type": "unicode",
-        "key": "subdomain",
-        "label": "Account subdomain"
-      },
-      {
-        "type": "unicode",
-        "key": "url",
-        "label": "Url to see lead"
-      }
-    ],
-    "fields": {}
-  },
-  "lead_update": {
-    "_dump_version": 1,
-    "label": "Update Lead",
-    "help_text": "Updates a lead",
-    "noun": "Lead",
-    "important": false,
-    "hide": false,
-    "url": "https://{{account}}.amocrm.com/private/api/v2/json/leads/set/",
-    "custom_fields_url": "https://{{account}}.amocrm.com/private/api/v2/json/accounts/current/",
-    "sample_result_fields": [
-      {
-        "type": "int",
-        "key": "id",
-        "label": "Unique lead identifier"
-      },
-      {
-        "type": "unicode",
-        "key": "subdomain",
-        "label": "Account subdomain"
-      },
-      {
-        "type": "unicode",
-        "key": "url",
-        "label": "Url to see lead"
-      }
-    ],
-    "fields": {}
-  },
   "contact_add": {
     "_dump_version": 1,
     "label": "Create Contact",
@@ -107,6 +51,62 @@
         "type": "unicode",
         "key": "url",
         "label": "Url to see contact"
+      }
+    ],
+    "fields": {}
+  },
+  "lead_add": {
+    "_dump_version": 1,
+    "label": "Create Lead",
+    "help_text": "Creates a new lead",
+    "noun": "Lead",
+    "important": true,
+    "hide": false,
+    "url": "https://{{account}}.amocrm.com/private/api/v2/json/leads/set/",
+    "custom_fields_url": "https://{{account}}.amocrm.com/private/api/v2/json/accounts/current/",
+    "sample_result_fields": [
+      {
+        "type": "int",
+        "key": "id",
+        "label": "Unique lead identifier"
+      },
+      {
+        "type": "unicode",
+        "key": "subdomain",
+        "label": "Account subdomain"
+      },
+      {
+        "type": "unicode",
+        "key": "url",
+        "label": "Url to see lead"
+      }
+    ],
+    "fields": {}
+  },
+  "lead_update": {
+    "_dump_version": 1,
+    "label": "Update Lead",
+    "help_text": "Updates a lead",
+    "noun": "Lead",
+    "important": false,
+    "hide": false,
+    "url": "https://{{account}}.amocrm.com/private/api/v2/json/leads/set/",
+    "custom_fields_url": "https://{{account}}.amocrm.com/private/api/v2/json/accounts/current/",
+    "sample_result_fields": [
+      {
+        "type": "int",
+        "key": "id",
+        "label": "Unique lead identifier"
+      },
+      {
+        "type": "unicode",
+        "key": "subdomain",
+        "label": "Account subdomain"
+      },
+      {
+        "type": "unicode",
+        "key": "url",
+        "label": "Url to see lead"
       }
     ],
     "fields": {}
