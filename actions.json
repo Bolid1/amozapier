@@ -88,7 +88,7 @@
     "label": "Update Lead",
     "help_text": "Updates a lead",
     "noun": "Lead",
-    "important": false,
+    "important": true,
     "hide": false,
     "url": "https://{{account}}.amocrm.com/private/api/v2/json/leads/set/",
     "custom_fields_url": "https://{{account}}.amocrm.com/private/api/v2/json/accounts/current/",
