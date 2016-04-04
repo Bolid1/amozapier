@@ -32,7 +32,7 @@
     "label": "Update Contact",
     "help_text": "Updates a contact",
     "noun": "Contact",
-    "important": true,
+    "important": false,
     "hide": false,
     "url": "https://{{account}}.amocrm.com/private/api/v2/json/contacts/set/",
     "custom_fields_url": "https://{{account}}.amocrm.com/private/api/v2/json/accounts/current/",
