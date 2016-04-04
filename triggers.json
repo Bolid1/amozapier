@@ -1,4 +1,58 @@
 {
+  "auth": {
+    "_dump_version": 1,
+    "label": "Auth",
+    "help_text": "Trigger for test auth",
+    "noun": "auth",
+    "important": false,
+    "hide": true,
+    "data_source": "Polling",
+    "url": "https://{{account}}.amocrm.com/private/api/auth.php?type=json",
+    "custom_fields_url": null,
+    "hook_event": null,
+    "hook_static_directions": "Log into your service and paste the below URL into the webhook setup field.",
+    "sample_result_fields": [
+      {
+        "type": "unicode",
+        "key": "response__accounts"
+      },
+      {
+        "type": "unicode",
+        "key": "response__accounts[]id",
+        "label": "account_id"
+      },
+      {
+        "type": "unicode",
+        "key": "response__accounts[]language",
+        "label": "account_lang"
+      },
+      {
+        "type": "unicode",
+        "key": "response__accounts[]name",
+        "label": "account_name"
+      },
+      {
+        "type": "unicode",
+        "key": "response__accounts[]subdomain",
+        "label": "account_subdomain"
+      },
+      {
+        "type": "unicode",
+        "key": "response__accounts[]timezone",
+        "label": "account_timezone"
+      },
+      {
+        "type": "bool",
+        "key": "response__auth",
+        "label": "auth_success"
+      },
+      {
+        "type": "int",
+        "key": "response__server_time"
+      }
+    ],
+    "fields": {}
+  },
   "add_contact": {
     "_dump_version": 1,
     "label": "New Contact",
@@ -66,7 +120,7 @@
     "help_text": "Triggers when contact is restored",
     "noun": "Contact",
     "important": false,
-    "hide": false,
+    "hide": true,
     "data_source": "Notification REST Hooks",
     "url": "https://webhooks.amocrm.com/samples/{{account}}/contacts/restore/",
     "custom_fields_url": "https://{{account}}.amocrm.com/private/api/v2/json/accounts/current/",
@@ -142,7 +196,7 @@
     "help_text": "Triggers when lead is restored",
     "noun": "Lead",
     "important": false,
-    "hide": false,
+    "hide": true,
     "data_source": "Notification REST Hooks",
     "url": "https://webhooks.amocrm.com/samples/{{account}}/leads/restore/",
     "custom_fields_url": "https://{{account}}.amocrm.com/private/api/v2/json/accounts/current/",
@@ -248,7 +302,7 @@
     "help_text": "Triggers when company is restored",
     "noun": "Company",
     "important": false,
-    "hide": false,
+    "hide": true,
     "data_source": "Notification REST Hooks",
     "url": "https://webhooks.amocrm.com/samples/{{account}}/companies/restore/",
     "custom_fields_url": "https://{{account}}.amocrm.com/private/api/v2/json/accounts/current/",
