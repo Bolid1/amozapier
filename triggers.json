@@ -1,713 +1,314 @@
 {
   "auth": {
-    "_dump_version": 1, 
-    "label": "Auth", 
-    "help_text": "Trigger for test auth", 
-    "noun": "auth", 
-    "important": false, 
-    "hide": true, 
-    "data_source": "Polling", 
-    "url": "https://{{account}}.amocrm.{{top_level_domain}}/private/api/auth.php?type=json", 
-    "custom_fields_url": null, 
-    "hook_event": null, 
-    "hook_static_directions": "Log into your service and paste the below URL into the webhook setup field.", 
+    "_dump_version": 1,
+    "label": "Auth",
+    "help_text": "Trigger for test auth",
+    "noun": "auth",
+    "important": false,
+    "hide": true,
+    "data_source": "Polling",
+    "url": "https://{{account}}.amocrm.{{top_level_domain}}/private/api/auth.php?type=json",
+    "custom_fields_url": null,
+    "hook_event": null,
+    "hook_static_directions": "Log into your service and paste the below URL into the webhook setup field.",
     "sample_result_fields": [
       {
-        "type": "unicode", 
+        "type": "unicode",
         "key": "response__accounts"
-      }, 
+      },
       {
-        "type": "unicode", 
-        "key": "response__accounts[]id", 
+        "type": "unicode",
+        "key": "response__accounts[]id",
         "label": "account_id"
-      }, 
+      },
       {
-        "type": "unicode", 
-        "key": "response__accounts[]language", 
+        "type": "unicode",
+        "key": "response__accounts[]language",
         "label": "account_lang"
-      }, 
+      },
       {
-        "type": "unicode", 
-        "key": "response__accounts[]name", 
+        "type": "unicode",
+        "key": "response__accounts[]name",
         "label": "account_name"
-      }, 
+      },
       {
-        "type": "unicode", 
-        "key": "response__accounts[]subdomain", 
+        "type": "unicode",
+        "key": "response__accounts[]subdomain",
         "label": "account_subdomain"
-      }, 
+      },
       {
-        "type": "unicode", 
-        "key": "response__accounts[]timezone", 
+        "type": "unicode",
+        "key": "response__accounts[]timezone",
         "label": "account_timezone"
-      }, 
+      },
       {
-        "type": "bool", 
-        "key": "response__auth", 
+        "type": "bool",
+        "key": "response__auth",
         "label": "auth_success"
-      }, 
+      },
       {
-        "type": "int", 
+        "type": "int",
         "key": "response__server_time"
       }
-    ], 
+    ],
     "fields": {}
-  }, 
+  },
   "add_contact": {
-    "_dump_version": 1, 
-    "label": "New Contact", 
-    "help_text": "Triggers when new contact is created", 
-    "noun": "Contact", 
-    "important": false, 
-    "hide": false, 
-    "data_source": "Notification REST Hooks", 
-    "url": "https://webhooks.amocrm.{{top_level_domain}}/samples/{{account}}/contacts/add/", 
-    "custom_fields_url": "https://{{account}}.amocrm.{{top_level_domain}}/private/api/v2/json/accounts/current/", 
-    "hook_event": "add_contact", 
-    "hook_static_directions": "Log into your service and paste the below URL into the webhook setup field.", 
-    "sample_result_fields": [
-      {
-        "type": "unicode", 
-        "key": "created_user_id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "date_create"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "last_modified"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "modified_user_id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "name"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "responsible_user_id"
-      }
-    ], 
+    "_dump_version": 1,
+    "label": "New Contact",
+    "help_text": "Triggers when a new contact is created",
+    "noun": "Contact",
+    "important": false,
+    "hide": false,
+    "data_source": "Notification REST Hooks",
+    "url": "https://webhooks.amocrm.{{top_level_domain}}/samples/{{account}}/contacts/add/",
+    "custom_fields_url": "https://{{account}}.amocrm.{{top_level_domain}}/private/api/v2/json/accounts/current/",
+    "hook_event": "add_contact",
+    "hook_static_directions": "Log into your service and paste the below URL into the webhook setup field.",
+    "sample_result_fields": [],
     "fields": {}
-  }, 
-  "add_company": {
-    "_dump_version": 1, 
-    "label": "New Company", 
-    "help_text": "Triggers when new company is created", 
-    "noun": "Company", 
-    "important": false, 
-    "hide": false, 
-    "data_source": "Notification REST Hooks", 
-    "url": "https://webhooks.amocrm.{{top_level_domain}}/samples/{{account}}/companies/add/", 
-    "custom_fields_url": "https://{{account}}.amocrm.{{top_level_domain}}/private/api/v2/json/accounts/current/", 
-    "hook_event": "add_company", 
-    "hook_static_directions": "Log into your service and paste the below URL into the webhook setup field.", 
-    "sample_result_fields": [
-      {
-        "type": "unicode", 
-        "key": "created_user_id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "date_create"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "group_id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "last_modified"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "modified_user_id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "name"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "responsible_user_id"
-      }
-    ], 
-    "fields": {}
-  }, 
-  "add_lead": {
-    "_dump_version": 1, 
-    "label": "New Lead", 
-    "help_text": "Triggers when a new lead is created", 
-    "noun": "Lead", 
-    "important": true, 
-    "hide": false, 
-    "data_source": "Notification REST Hooks", 
-    "url": "https://webhooks.amocrm.{{top_level_domain}}/samples/{{account}}/leads/add/", 
-    "custom_fields_url": "https://{{account}}.amocrm.{{top_level_domain}}/private/api/v2/json/accounts/current/", 
-    "hook_event": "add_lead", 
-    "hook_static_directions": "Log into your service and paste the below URL into the webhook setup field.", 
-    "sample_result_fields": [
-      {
-        "type": "unicode", 
-        "key": "created_user_id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "date_create"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "last_modified"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "modified_user_id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "name"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "pipeline_id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "price"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "responsible_user_id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "status_id"
-      }
-    ], 
-    "fields": {}
-  }, 
-  "delete_lead": {
-    "_dump_version": 1, 
-    "label": "Lead Deleted", 
-    "help_text": "Triggers when lead is deleted", 
-    "noun": "Lead", 
-    "important": false, 
-    "hide": true, 
-    "data_source": "Notification REST Hooks", 
-    "url": "https://webhooks.amocrm.{{top_level_domain}}/samples/{{account}}/leads/delete/", 
-    "custom_fields_url": "https://{{account}}.amocrm.{{top_level_domain}}/private/api/v2/json/accounts/current/", 
-    "hook_event": "delete_lead", 
-    "hook_static_directions": "Log into your service and paste the below URL into the webhook setup field.", 
-    "sample_result_fields": [
-      {
-        "type": "unicode", 
-        "key": "id", 
-        "label": "Lead id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "subdomain", 
-        "label": "Account subdomain"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "url", 
-        "label": "URL for see lead"
-      }
-    ], 
-    "fields": {}
-  }, 
+  },
   "delete_contact": {
-    "_dump_version": 1, 
-    "label": "Contact Deleted", 
-    "help_text": "Triggers when contact is deleted", 
-    "noun": "Contact", 
-    "important": false, 
-    "hide": true, 
-    "data_source": "Notification REST Hooks", 
-    "url": "https://webhooks.amocrm.{{top_level_domain}}/samples/{{account}}/contacts/delete/", 
-    "custom_fields_url": "https://{{account}}.amocrm.{{top_level_domain}}/private/api/v2/json/accounts/current/", 
-    "hook_event": "delete_contact", 
-    "hook_static_directions": "Log into your service and paste the below URL into the webhook setup field.", 
+    "_dump_version": 1,
+    "label": "Contact Deleted",
+    "help_text": "Triggers when contact is deleted",
+    "noun": "Contact",
+    "important": false,
+    "hide": true,
+    "data_source": "Notification REST Hooks",
+    "url": "https://webhooks.amocrm.{{top_level_domain}}/samples/{{account}}/contacts/delete/",
+    "custom_fields_url": "https://{{account}}.amocrm.{{top_level_domain}}/private/api/v2/json/accounts/current/",
+    "hook_event": "delete_contact",
+    "hook_static_directions": "Log into your service and paste the below URL into the webhook setup field.",
     "sample_result_fields": [
       {
-        "type": "unicode", 
-        "key": "id", 
-        "label": "Contact id"
-      }, 
+        "type": "unicode",
+        "key": "id",
+        "label": "Contact ID"
+      },
       {
-        "type": "unicode", 
-        "key": "subdomain", 
+        "type": "unicode",
+        "key": "subdomain",
         "label": "Account subdomain"
-      }, 
+      },
       {
-        "type": "unicode", 
-        "key": "url", 
+        "type": "unicode",
+        "key": "url",
         "label": "URL for see contact"
       }
-    ], 
+    ],
     "fields": {}
-  }, 
-  "delete_company": {
-    "_dump_version": 1, 
-    "label": "Company Deleted", 
-    "help_text": "Triggers when company is delete", 
-    "noun": "Company", 
-    "important": false, 
-    "hide": true, 
-    "data_source": "Notification REST Hooks", 
-    "url": "https://webhooks.amocrm.{{top_level_domain}}/samples/{{account}}/companies/delete/", 
-    "custom_fields_url": "https://{{account}}.amocrm.{{top_level_domain}}/private/api/v2/json/accounts/current/", 
-    "hook_event": "delete_company", 
-    "hook_static_directions": "Log into your service and paste the below URL into the webhook setup field.", 
+  },
+  "update_contact": {
+    "_dump_version": 1,
+    "label": "Contact Updated",
+    "help_text": "Triggers when contact is updated",
+    "noun": "Contact",
+    "important": false,
+    "hide": false,
+    "data_source": "Notification REST Hooks",
+    "url": "https://webhooks.amocrm.{{top_level_domain}}/samples/{{account}}/contacts/update/",
+    "custom_fields_url": "https://{{account}}.amocrm.{{top_level_domain}}/private/api/v2/json/accounts/current/",
+    "hook_event": "update_contact",
+    "hook_static_directions": "Log into your service and paste the below URL into the webhook setup field.",
+    "sample_result_fields": [],
+    "fields": {}
+  },
+  "restore_contact": {
+    "_dump_version": 1,
+    "label": "Contact Restored",
+    "help_text": "Triggers when contact is restored",
+    "noun": "Contact",
+    "important": false,
+    "hide": true,
+    "data_source": "Notification REST Hooks",
+    "url": "https://webhooks.amocrm.{{top_level_domain}}/samples/{{account}}/contacts/restore/",
+    "custom_fields_url": "https://{{account}}.amocrm.{{top_level_domain}}/private/api/v2/json/accounts/current/",
+    "hook_event": "restore_contact",
+    "hook_static_directions": "Log into your service and paste the below URL into the webhook setup field.",
+    "sample_result_fields": [],
+    "fields": {}
+  },
+  "add_lead": {
+    "_dump_version": 1,
+    "label": "New Lead",
+    "help_text": "Triggers when a new lead is created",
+    "noun": "Lead",
+    "important": true,
+    "hide": false,
+    "data_source": "Notification REST Hooks",
+    "url": "https://webhooks.amocrm.{{top_level_domain}}/samples/{{account}}/leads/add/",
+    "custom_fields_url": "https://{{account}}.amocrm.{{top_level_domain}}/private/api/v2/json/accounts/current/",
+    "hook_event": "add_lead",
+    "hook_static_directions": "Log into your service and paste the below URL into the webhook setup field.",
+    "sample_result_fields": [],
+    "fields": {}
+  },
+  "delete_lead": {
+    "_dump_version": 1,
+    "label": "Lead Deleted",
+    "help_text": "Triggers when lead is deleted",
+    "noun": "Lead",
+    "important": false,
+    "hide": true,
+    "data_source": "Notification REST Hooks",
+    "url": "https://webhooks.amocrm.{{top_level_domain}}/samples/{{account}}/leads/delete/",
+    "custom_fields_url": "https://{{account}}.amocrm.{{top_level_domain}}/private/api/v2/json/accounts/current/",
+    "hook_event": "delete_lead",
+    "hook_static_directions": "Log into your service and paste the below URL into the webhook setup field.",
     "sample_result_fields": [
       {
-        "type": "unicode", 
-        "key": "id", 
-        "label": "Company id"
-      }, 
+        "type": "unicode",
+        "key": "id",
+        "label": "Lead ID"
+      },
       {
-        "type": "unicode", 
-        "key": "subdomain", 
+        "type": "unicode",
+        "key": "subdomain",
         "label": "Account subdomain"
-      }, 
+      },
       {
-        "type": "unicode", 
-        "key": "url", 
+        "type": "unicode",
+        "key": "url",
+        "label": "URL for see lead"
+      }
+    ],
+    "fields": {}
+  },
+  "update_lead": {
+    "_dump_version": 1,
+    "label": "Lead Updated",
+    "help_text": "Triggers when lead is updated",
+    "noun": "Lead",
+    "important": true,
+    "hide": false,
+    "data_source": "Notification REST Hooks",
+    "url": "https://webhooks.amocrm.{{top_level_domain}}/samples/{{account}}/leads/update/",
+    "custom_fields_url": "https://{{account}}.amocrm.{{top_level_domain}}/private/api/v2/json/accounts/current/",
+    "hook_event": "update_lead",
+    "hook_static_directions": "Log into your service and paste the below URL into the webhook setup field.",
+    "sample_result_fields": [],
+    "fields": {}
+  },
+  "restore_lead": {
+    "_dump_version": 1,
+    "label": "Lead Restored",
+    "help_text": "Triggers when lead is restored",
+    "noun": "Lead",
+    "important": false,
+    "hide": true,
+    "data_source": "Notification REST Hooks",
+    "url": "https://webhooks.amocrm.{{top_level_domain}}/samples/{{account}}/leads/restore/",
+    "custom_fields_url": "https://{{account}}.amocrm.{{top_level_domain}}/private/api/v2/json/accounts/current/",
+    "hook_event": "restore_lead",
+    "hook_static_directions": "Log into your service and paste the below URL into the webhook setup field.",
+    "sample_result_fields": [],
+    "fields": {}
+  },
+  "status_lead": {
+    "_dump_version": 1,
+    "label": "Lead Status Changed",
+    "help_text": "Triggers when lead status is changed",
+    "noun": "Lead",
+    "important": true,
+    "hide": false,
+    "data_source": "Notification REST Hooks",
+    "url": "https://webhooks.amocrm.{{top_level_domain}}/samples/{{account}}/leads/status/",
+    "custom_fields_url": "https://{{account}}.amocrm.{{top_level_domain}}/private/api/v2/json/accounts/current/",
+    "hook_event": "status_lead",
+    "hook_static_directions": "Log into your service and paste the below URL into the webhook setup field.",
+    "sample_result_fields": [],
+    "fields": {}
+  },
+  "responsible_lead": {
+    "_dump_version": 1,
+    "label": "Lead Responsible User Changed",
+    "help_text": "Triggers when lead responsible user is changed",
+    "noun": "Lead",
+    "important": false,
+    "hide": false,
+    "data_source": "Notification REST Hooks",
+    "url": "https://webhooks.amocrm.{{top_level_domain}}/samples/{{account}}/leads/responsible/",
+    "custom_fields_url": "https://{{account}}.amocrm.{{top_level_domain}}/private/api/v2/json/accounts/current/",
+    "hook_event": "responsible_lead",
+    "hook_static_directions": "Log into your service and paste the below URL into the webhook setup field.",
+    "sample_result_fields": [],
+    "fields": {}
+  },
+  "add_company": {
+    "_dump_version": 1,
+    "label": "New Company",
+    "help_text": "Triggers when a new company is created",
+    "noun": "Company",
+    "important": false,
+    "hide": false,
+    "data_source": "Notification REST Hooks",
+    "url": "https://webhooks.amocrm.{{top_level_domain}}/samples/{{account}}/companies/add/",
+    "custom_fields_url": "https://{{account}}.amocrm.{{top_level_domain}}/private/api/v2/json/accounts/current/",
+    "hook_event": "add_company",
+    "hook_static_directions": "Log into your service and paste the below URL into the webhook setup field.",
+    "sample_result_fields": [],
+    "fields": {}
+  },
+  "delete_company": {
+    "_dump_version": 1,
+    "label": "Company Deleted",
+    "help_text": "Triggers when company is deleted",
+    "noun": "Company",
+    "important": false,
+    "hide": true,
+    "data_source": "Notification REST Hooks",
+    "url": "https://webhooks.amocrm.{{top_level_domain}}/samples/{{account}}/companies/delete/",
+    "custom_fields_url": "https://{{account}}.amocrm.{{top_level_domain}}/private/api/v2/json/accounts/current/",
+    "hook_event": "delete_company",
+    "hook_static_directions": "Log into your service and paste the below URL into the webhook setup field.",
+    "sample_result_fields": [
+      {
+        "type": "unicode",
+        "key": "id",
+        "label": "Company ID"
+      },
+      {
+        "type": "unicode",
+        "key": "subdomain",
+        "label": "Account subdomain"
+      },
+      {
+        "type": "unicode",
+        "key": "url",
         "label": "URL for see company"
       }
-    ], 
+    ],
     "fields": {}
-  }, 
-  "update_lead": {
-    "_dump_version": 1, 
-    "label": "Lead Updated", 
-    "help_text": "Triggers when lead is updated", 
-    "noun": "Lead", 
-    "important": true, 
-    "hide": false, 
-    "data_source": "Notification REST Hooks", 
-    "url": "https://webhooks.amocrm.{{top_level_domain}}/samples/{{account}}/leads/update/", 
-    "custom_fields_url": "https://{{account}}.amocrm.{{top_level_domain}}/private/api/v2/json/accounts/current/", 
-    "hook_event": "update_lead", 
-    "hook_static_directions": "Log into your service and paste the below URL into the webhook setup field.", 
-    "sample_result_fields": [
-      {
-        "type": "unicode", 
-        "key": "created_user_id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "date_create"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "last_modified"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "modified_user_id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "name"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "pipeline_id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "price"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "responsible_user_id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "status_id"
-      }
-    ], 
-    "fields": {}
-  }, 
-  "update_contact": {
-    "_dump_version": 1, 
-    "label": "Contact Updated", 
-    "help_text": "Triggers when contact is updated", 
-    "noun": "Contact", 
-    "important": false, 
-    "hide": false, 
-    "data_source": "Notification REST Hooks", 
-    "url": "https://webhooks.amocrm.{{top_level_domain}}/samples/{{account}}/contacts/update/", 
-    "custom_fields_url": "https://{{account}}.amocrm.{{top_level_domain}}/private/api/v2/json/accounts/current/", 
-    "hook_event": "update_contact", 
-    "hook_static_directions": "Log into your service and paste the below URL into the webhook setup field.", 
-    "sample_result_fields": [
-      {
-        "type": "unicode", 
-        "key": "created_user_id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "date_create"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "last_modified"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "modified_user_id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "name"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "responsible_user_id"
-      }
-    ], 
-    "fields": {}
-  }, 
+  },
   "update_company": {
-    "_dump_version": 1, 
-    "label": "Company Updated", 
-    "help_text": "Triggers when company is updated", 
-    "noun": "Company", 
-    "important": false, 
-    "hide": false, 
-    "data_source": "Notification REST Hooks", 
-    "url": "https://webhooks.amocrm.{{top_level_domain}}/samples/{{account}}/companies/update/", 
-    "custom_fields_url": "https://{{account}}.amocrm.{{top_level_domain}}/private/api/v2/json/accounts/current/", 
-    "hook_event": "update_company", 
-    "hook_static_directions": "Log into your service and paste the below URL into the webhook setup field.", 
-    "sample_result_fields": [
-      {
-        "type": "unicode", 
-        "key": "created_user_id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "date_create"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "group_id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "last_modified"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "modified_user_id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "name"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "responsible_user_id"
-      }
-    ], 
+    "_dump_version": 1,
+    "label": "Company Updated",
+    "help_text": "Triggers when company is updated",
+    "noun": "Company",
+    "important": false,
+    "hide": false,
+    "data_source": "Notification REST Hooks",
+    "url": "https://webhooks.amocrm.{{top_level_domain}}/samples/{{account}}/companies/update/",
+    "custom_fields_url": "https://{{account}}.amocrm.{{top_level_domain}}/private/api/v2/json/accounts/current/",
+    "hook_event": "update_company",
+    "hook_static_directions": "Log into your service and paste the below URL into the webhook setup field.",
+    "sample_result_fields": [],
     "fields": {}
-  }, 
+  },
   "restore_company": {
-    "_dump_version": 1, 
-    "label": "Company Restored", 
-    "help_text": "Triggers when company is restored", 
-    "noun": "Company", 
-    "important": false, 
-    "hide": true, 
-    "data_source": "Notification REST Hooks", 
-    "url": "https://webhooks.amocrm.{{top_level_domain}}/samples/{{account}}/companies/restore/", 
-    "custom_fields_url": "https://{{account}}.amocrm.{{top_level_domain}}/private/api/v2/json/accounts/current/", 
-    "hook_event": "restore_company", 
-    "hook_static_directions": "Log into your service and paste the below URL into the webhook setup field.", 
-    "sample_result_fields": [
-      {
-        "type": "unicode", 
-        "key": "created_user_id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "date_create"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "group_id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "last_modified"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "modified_user_id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "name"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "responsible_user_id"
-      }
-    ], 
-    "fields": {}
-  }, 
-  "restore_contact": {
-    "_dump_version": 1, 
-    "label": "Contact Restored", 
-    "help_text": "Triggers when contact is restored", 
-    "noun": "Contact", 
-    "important": false, 
-    "hide": true, 
-    "data_source": "Notification REST Hooks", 
-    "url": "https://webhooks.amocrm.{{top_level_domain}}/samples/{{account}}/contacts/restore/", 
-    "custom_fields_url": "https://{{account}}.amocrm.{{top_level_domain}}/private/api/v2/json/accounts/current/", 
-    "hook_event": "restore_contact", 
-    "hook_static_directions": "Log into your service and paste the below URL into the webhook setup field.", 
-    "sample_result_fields": [
-      {
-        "type": "unicode", 
-        "key": "created_user_id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "date_create"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "last_modified"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "modified_user_id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "name"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "responsible_user_id"
-      }
-    ], 
-    "fields": {}
-  }, 
-  "restore_lead": {
-    "_dump_version": 1, 
-    "label": "Lead Restored", 
-    "help_text": "Triggers when lead is restored", 
-    "noun": "Lead", 
-    "important": false, 
-    "hide": true, 
-    "data_source": "Notification REST Hooks", 
-    "url": "https://webhooks.amocrm.{{top_level_domain}}/samples/{{account}}/leads/restore/", 
-    "custom_fields_url": "https://{{account}}.amocrm.{{top_level_domain}}/private/api/v2/json/accounts/current/", 
-    "hook_event": "restore_lead", 
-    "hook_static_directions": "Log into your service and paste the below URL into the webhook setup field.", 
-    "sample_result_fields": [
-      {
-        "type": "unicode", 
-        "key": "created_user_id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "date_create"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "last_modified"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "modified_user_id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "name"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "pipeline_id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "price"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "responsible_user_id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "status_id"
-      }
-    ], 
-    "fields": {}
-  }, 
-  "status_lead": {
-    "_dump_version": 1, 
-    "label": "Lead Status Changed", 
-    "help_text": "Triggers when lead status is changed", 
-    "noun": "Lead", 
-    "important": true, 
-    "hide": false, 
-    "data_source": "Notification REST Hooks", 
-    "url": "https://webhooks.amocrm.{{top_level_domain}}/samples/{{account}}/leads/status/", 
-    "custom_fields_url": "https://{{account}}.amocrm.{{top_level_domain}}/private/api/v2/json/accounts/current/", 
-    "hook_event": "status_lead", 
-    "hook_static_directions": "Log into your service and paste the below URL into the webhook setup field.", 
-    "sample_result_fields": [
-      {
-        "type": "unicode", 
-        "key": "created_user_id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "date_create"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "last_modified"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "modified_user_id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "name"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "old_status_id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "pipeline_id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "price"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "responsible_user_id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "status_id"
-      }
-    ], 
-    "fields": {}
-  }, 
-  "responsible_lead": {
-    "_dump_version": 1, 
-    "label": "Lead Responsible User Changed", 
-    "help_text": "Triggers when lead responsible user is changed", 
-    "noun": "Lead", 
-    "important": false, 
-    "hide": false, 
-    "data_source": "Notification REST Hooks", 
-    "url": "https://webhooks.amocrm.{{top_level_domain}}/samples/{{account}}/leads/responsible/", 
-    "custom_fields_url": "https://{{account}}.amocrm.{{top_level_domain}}/private/api/v2/json/accounts/current/", 
-    "hook_event": "responsible_lead", 
-    "hook_static_directions": "Log into your service and paste the below URL into the webhook setup field.", 
-    "sample_result_fields": [
-      {
-        "type": "unicode", 
-        "key": "created_user_id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "date_create"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "last_modified"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "modified_user_id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "name"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "old_responsible_user_id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "pipeline_id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "price"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "responsible_user_id"
-      }, 
-      {
-        "type": "unicode", 
-        "key": "status_id"
-      }
-    ], 
+    "_dump_version": 1,
+    "label": "Company Restored",
+    "help_text": "Triggers when company is restored",
+    "noun": "Company",
+    "important": false,
+    "hide": true,
+    "data_source": "Notification REST Hooks",
+    "url": "https://webhooks.amocrm.{{top_level_domain}}/samples/{{account}}/companies/restore/",
+    "custom_fields_url": "https://{{account}}.amocrm.{{top_level_domain}}/private/api/v2/json/accounts/current/",
+    "hook_event": "restore_company",
+    "hook_static_directions": "Log into your service and paste the below URL into the webhook setup field.",
+    "sample_result_fields": [],
     "fields": {}
   }
 }
