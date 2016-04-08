@@ -30,6 +30,17 @@
     "choices": null, 
     "sort": null, 
     "type": "Unicode", 
-    "input_format": "https://,{{input}},.amocrm.com/"
+    "input_format": "https://,{{input}},.amocrm.(com|ru)"
+  }, 
+  "top_level_domain": {
+    "label": "Top Level Domain", 
+    "required": true, 
+    "help_text": "Select top level domain, which you use to work with amoCRM", 
+    "placeholder": null, 
+    "default": "com", 
+    "choices": "ru|ru,com|com", 
+    "sort": null, 
+    "type": "Unicode", 
+    "input_format": "https://example.amocrm.,{{input}},/"
   }
 }
