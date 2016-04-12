@@ -8,8 +8,8 @@
     "USER_LOGIN": "{{login}}", 
     "USER_HASH": "{{api_key}}"
   }, 
-  "subscribe_url": "https://{{account}}.amocrm.com/private/api/v2/json/webhooks/subscribe/", 
-  "unsubscribe_url": "https://{{account}}.amocrm.com/private/api/v2/json/webhooks/unsubscribe/", 
+  "subscribe_url": "https://{{account}}.amocrm.com/private/api/v2/json/webhooks/subscribe/",
+  "unsubscribe_url": "https://{{account}}.amocrm.com/private/api/v2/json/webhooks/unsubscribe/",
   "their_user_count": 10000, 
   "homepage_url": "http://www.amoCRM.com", 
   "auth_urls": {}, 

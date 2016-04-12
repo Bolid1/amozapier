@@ -6,8 +6,8 @@
     "noun": "Contact",
     "important": true,
     "hide": false,
-    "url": "https://{{account}}.amocrm.{{top_level_domain}}/private/api/v2/json/contacts/set/",
-    "custom_fields_url": "https://{{account}}.amocrm.{{top_level_domain}}/private/api/v2/json/accounts/current/",
+    "url": "https://{{account}}.amocrm.com/private/api/v2/json/contacts/set/",
+    "custom_fields_url": "https://{{account}}.amocrm.com/private/api/v2/json/accounts/current/",
     "sample_result_fields": [
       {
         "type": "int",
@@ -34,8 +34,8 @@
     "noun": "Contact",
     "important": false,
     "hide": false,
-    "url": "https://{{account}}.amocrm.{{top_level_domain}}/private/api/v2/json/contacts/set/",
-    "custom_fields_url": "https://{{account}}.amocrm.{{top_level_domain}}/private/api/v2/json/accounts/current/",
+    "url": "https://{{account}}.amocrm.com/private/api/v2/json/contacts/set/",
+    "custom_fields_url": "https://{{account}}.amocrm.com/private/api/v2/json/accounts/current/",
     "sample_result_fields": [
       {
         "type": "int",
@@ -62,8 +62,8 @@
     "noun": "Lead",
     "important": true,
     "hide": false,
-    "url": "https://{{account}}.amocrm.{{top_level_domain}}/private/api/v2/json/leads/set/",
-    "custom_fields_url": "https://{{account}}.amocrm.{{top_level_domain}}/private/api/v2/json/accounts/current/",
+    "url": "https://{{account}}.amocrm.com/private/api/v2/json/leads/set/",
+    "custom_fields_url": "https://{{account}}.amocrm.com/private/api/v2/json/accounts/current/",
     "sample_result_fields": [
       {
         "type": "int",
@@ -90,8 +90,8 @@
     "noun": "Lead",
     "important": true,
     "hide": false,
-    "url": "https://{{account}}.amocrm.{{top_level_domain}}/private/api/v2/json/leads/set/",
-    "custom_fields_url": "https://{{account}}.amocrm.{{top_level_domain}}/private/api/v2/json/accounts/current/",
+    "url": "https://{{account}}.amocrm.com/private/api/v2/json/leads/set/",
+    "custom_fields_url": "https://{{account}}.amocrm.com/private/api/v2/json/accounts/current/",
     "sample_result_fields": [
       {
         "type": "int",
@@ -118,8 +118,8 @@
     "noun": "Company",
     "important": false,
     "hide": false,
-    "url": "https://{{account}}.amocrm.{{top_level_domain}}/private/api/v2/json/company/set/",
-    "custom_fields_url": "https://{{account}}.amocrm.{{top_level_domain}}/private/api/v2/json/accounts/current/",
+    "url": "https://{{account}}.amocrm.com/private/api/v2/json/company/set/",
+    "custom_fields_url": "https://{{account}}.amocrm.com/private/api/v2/json/accounts/current/",
     "sample_result_fields": [
       {
         "type": "int",
@@ -146,8 +146,8 @@
     "noun": "Company",
     "important": false,
     "hide": false,
-    "url": "https://{{account}}.amocrm.{{top_level_domain}}/private/api/v2/json/company/set/",
-    "custom_fields_url": "https://{{account}}.amocrm.{{top_level_domain}}/private/api/v2/json/accounts/current/",
+    "url": "https://{{account}}.amocrm.com/private/api/v2/json/company/set/",
+    "custom_fields_url": "https://{{account}}.amocrm.com/private/api/v2/json/accounts/current/",
     "sample_result_fields": [
       {
         "type": "int",
@@ -174,8 +174,8 @@
     "noun": "Task",
     "important": false,
     "hide": false,
-    "url": "https://{{account}}.amocrm.{{top_level_domain}}/private/api/v2/json/tasks/set/",
-    "custom_fields_url": "https://{{account}}.amocrm.{{top_level_domain}}/private/api/v2/json/accounts/current/",
+    "url": "https://{{account}}.amocrm.com/private/api/v2/json/tasks/set/",
+    "custom_fields_url": "https://{{account}}.amocrm.com/private/api/v2/json/accounts/current/",
     "sample_result_fields": [
       {
         "type": "int",
@@ -197,8 +197,8 @@
     "noun": "Task",
     "important": false,
     "hide": false,
-    "url": "https://{{account}}.amocrm.{{top_level_domain}}/private/api/v2/json/tasks/set/",
-    "custom_fields_url": "https://{{account}}.amocrm.{{top_level_domain}}/private/api/v2/json/accounts/current/",
+    "url": "https://{{account}}.amocrm.com/private/api/v2/json/tasks/set/",
+    "custom_fields_url": "https://{{account}}.amocrm.com/private/api/v2/json/accounts/current/",
     "sample_result_fields": [
       {
         "type": "int",
@@ -220,8 +220,8 @@
     "noun": "Note",
     "important": false,
     "hide": false,
-    "url": "https://{{account}}.amocrm.{{top_level_domain}}/private/api/v2/json/notes/set/",
-    "custom_fields_url": "https://{{account}}.amocrm.{{top_level_domain}}/private/api/v2/json/accounts/current/",
+    "url": "https://{{account}}.amocrm.com/private/api/v2/json/notes/set/",
+    "custom_fields_url": "https://{{account}}.amocrm.com/private/api/v2/json/accounts/current/",
     "sample_result_fields": [
       {
         "type": "int",
@@ -243,8 +243,8 @@
     "noun": "Note",
     "important": false,
     "hide": false,
-    "url": "https://{{account}}.amocrm.{{top_level_domain}}/private/api/v2/json/notes/set/",
-    "custom_fields_url": "https://{{account}}.amocrm.{{top_level_domain}}/private/api/v2/json/accounts/current/",
+    "url": "https://{{account}}.amocrm.com/private/api/v2/json/notes/set/",
+    "custom_fields_url": "https://{{account}}.amocrm.com/private/api/v2/json/accounts/current/",
     "sample_result_fields": [
       {
         "type": "int",
