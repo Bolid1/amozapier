@@ -1006,6 +1006,11 @@ _.extend(CustomFields.prototype, {
           type: 'int',
           key: 'group_id',
           label: 'Unique identified of a group'
+        },
+        {
+          type: 'int',
+          key: 'note_type',
+          label: 'Note type'
         }
       ]);
     }
@@ -1042,15 +1047,6 @@ _.extend(CustomFields.prototype, {
           required: is_action_add
         }
       ]);
-    }
-
-    if (entity_name_lowercase === 'note') {
-      result.push({
-        type: 'int',
-        key: 'note_type',
-        label: 'Note type',
-        choices: users ? users : undefined
-      });
     }
 
     return result;
@@ -1460,6 +1456,7 @@ _.extend(Application.prototype, {
         return field.key;
       });
       base_fields.push('last_modified');
+      base_fields.push('note_type');
       data = _.pick(data, base_fields);
     }
 
