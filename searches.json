@@ -21,7 +21,7 @@
         "choices": null,
         "sort": null,
         "type_of": "Integer",
-        "list": true,
+        "list": false,
         "prefill": null
       },
       "query": {
@@ -59,7 +59,7 @@
         "choices": null,
         "sort": null,
         "type_of": "Integer",
-        "list": true,
+        "list": false,
         "prefill": null
       },
       "query": {
@@ -97,7 +97,7 @@
         "choices": null,
         "sort": null,
         "type_of": "Integer",
-        "list": true,
+        "list": false,
         "prefill": null
       },
       "query": {
@@ -135,7 +135,7 @@
         "choices": null,
         "sort": null,
         "type_of": "Integer",
-        "list": true,
+        "list": false,
         "prefill": null
       },
       "element_id": {
@@ -184,7 +184,7 @@
         "choices": null,
         "sort": null,
         "type_of": "Integer",
-        "list": true,
+        "list": false,
         "prefill": null
       },
       "element_id": {
