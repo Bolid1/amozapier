@@ -1608,6 +1608,8 @@ _.extend(Application.prototype, {
       types = {};
       _.each(account[tmp], function (type) {
         types[type.code || type.id] = type.name.toString().trim();
+        delete types['LETTER'];
+        delete types['CALL'];
       });
     }
 
